@@ -43,20 +43,12 @@ const questions = [
             'Apache',
             'Boost',
             'BSD',
-            'Creative Commons',
+            'Creative-Commons',
             'Eclipse',
             'GNU',
-            'The Organization for Ethical Source',
-            'IBM',
-            'ISC',
             'MIT',
             'Mozilla',
-            'Open Data Commons',
-            'Perl',
-            'SIL',
             'Unlicense',
-            'WTFPL',
-            'Zlib',
         ]
     },
     {
@@ -80,9 +72,8 @@ function getInput (){
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err, result){
-        if (err) console.log(err)
-    })
+    fs.writeFile(fileName, data, (err)=>
+    err ? console.error(err) : console.log('Input logged! Check out your new README file in the output folder!'))
 }
     
 // TODO: Create a function to initialize app
@@ -90,7 +81,7 @@ async function init() {
    
     const input = await getInput()
     const data = generateMarkdown(input)
-    writeToFile('newREADME.md', data)
+    writeToFile('./output/README.md', data)
     
 }
 
