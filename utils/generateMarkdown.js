@@ -92,7 +92,7 @@ ${data.usage}
 
 Here is a screenshot of the completed application:
 
-![Application Screenshot](assets/images/finished-webpage.png)
+![Application Screenshot](../assets/images/finished-webpage.png)
 
 ## Contributors
 

@@ -28,9 +28,9 @@ This application has been thoroughly tested. Run by typing the following to the 
 node index.js
 ```
 
-Here is a video of the application at work:
+Here is a link to a demo of the application at work:
 
-![Application Screenshot](assets/images/finished-webpage.png)
+https://watch.screencastify.com/v/foGrZq8GcmZQS0hIOQdH
 
 ## Contributors
 
