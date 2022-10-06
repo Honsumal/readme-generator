@@ -1,43 +1,63 @@
 // TODO: Include packages needed for this application
 const inq = require('inquirer');
 const fs = require('fs')
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?: ',
-        name: 'pTitle'
+        name: 'title'
     },
     {
         type: 'input',
         message: 'Enter your description: ',
-        name: 'desc'
+        name: 'description'
     },
     {
         type: 'input',
         message: 'Enter your installation instructions: ',
-        name: 'instInst'
+        name: 'install'
     },
     {
         type: 'input',
         message: 'Enter usage information: ',
-        name: 'usInf'
+        name: 'usage'
     },
     {
         type: 'input',
         message: 'Enter contribution guidelines: ',
-        name: 'contGuid'
+        name: 'contribution'
     },
     {
         type: 'input',
         message: 'Enter test instructions: ',
-        name: 'testInst'
+        name: 'test'
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'Select which license you wish to use: ',
-        name: 'license'
+        name: 'license',
+        choices: [
+            'Apache',
+            'Boost',
+            'BSD',
+            'Creative Commons',
+            'Eclipse',
+            'GNU',
+            'The Organization for Ethical Source',
+            'IBM',
+            'ISC',
+            'MIT',
+            'Mozilla',
+            'Open Data Commons',
+            'Perl',
+            'SIL',
+            'Unlicense',
+            'WTFPL',
+            'Zlib',
+        ]
     },
     {
         type: 'input',
@@ -51,26 +71,28 @@ const questions = [
     },
 ];
 
-inq
-    .prompt(questions)
-    .then((answers) => {
-        fs.appendFile('answers.txt', JSON.stringify(answers), (err)=>
-    err ? console.error(err) : console.log('Answers logged!'))
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
+    
+function getInput (){
+    return inq
+            .prompt(questions)
+        }
 
-    })
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function(err, result){
+        if (err) console.log(err)
+    })
+}
+    
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+   
+    const input = await getInput()
+    const data = generateMarkdown(input)
+    writeToFile('newREADME.md', data)
+    
+}
 
 // Function call to initialize app
 init();
