@@ -1,4 +1,5 @@
 # README Generator
+  ![License Badge](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Description
 
@@ -16,32 +17,36 @@ This application is a professional README generator that works from the command 
 
 Please take the following steps to install this application:
 
-- Install Node.js
-- Ensure Inquirer Version 8.2.4 is installed within the application
+install Node.js and Inquirer v8.2.4
 
 Please ensure that these steps are taken to ensure the application runs smoothly.
 
 ## Usage
 
-This application has been thoroughly tested. Run by typing the following to the command line: 
-```
-node index.js
-```
+Run the following command in the command line ``` node index.js ```
 
-Here is a video of the application at work:
+Here is a screenshot of the completed application:
 
 ![Application Screenshot](assets/images/finished-webpage.png)
 
 ## Contributors
 
+Here is a list of contributors to this application:
+
 N/A
 
 ## License
 
-N/A
+This application is covered by the MIT License.
+
+Here is a link to the above license detailing its use:
+
+https://choosealicense.com/licenses/mit
 
 
 ## Tests
+
+To ensure that this application is working, please perform the following tests:
 
 N/A
 
